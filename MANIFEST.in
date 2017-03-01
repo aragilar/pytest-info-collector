@@ -1,0 +1,2 @@
+include versioneer.py
+include pytest_info_collector/_version.py
