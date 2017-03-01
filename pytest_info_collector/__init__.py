@@ -2,6 +2,7 @@
 A simple pytest plugin which collects test information and prints it at the end
 of the tests
 """
+from collections import defaultdict
 import pytest
 
 from ._version import get_versions
@@ -14,7 +15,7 @@ class InfoCollector(object):
     Main driver of test information collection
     """
     def __init__(self):
-        self._info = {}
+        self._info = defaultdict(list)
 
     def pytest_terminal_summary(self, terminalreporter, exitstatus):
         """
@@ -22,7 +23,8 @@ class InfoCollector(object):
         """
         terminalreporter.section("Test Information")
         for test, info in self._info.items():
-            terminalreporter.write("{}: {}\n".format(test, info))
+            for datum in info:
+                terminalreporter.write("{}: {}\n".format(test, datum))
 
     @pytest.fixture
     def test_info(self, request):
@@ -30,7 +32,7 @@ class InfoCollector(object):
         Fixture to collect test information
         """
         def add_info(info):
-            self._info[get_test_name(request)] = info
+            self._info[get_test_name(request)].append(info)
         return add_info
 
 
