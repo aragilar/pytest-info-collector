@@ -21,7 +21,7 @@ class InfoCollector(object):
         """
         Hook for printing test info at the end of the run
         """
-        # pytest: disable=unused-argument
+        # pylint: disable=unused-argument
         terminalreporter.section("Test Information")
         for test, info in self._info.items():
             for datum in info:
