@@ -21,6 +21,7 @@ class InfoCollector(object):
         """
         Hook for printing test info at the end of the run
         """
+        # pytest: disable=unused-argument
         terminalreporter.section("Test Information")
         for test, info in self._info.items():
             for datum in info:
@@ -32,6 +33,9 @@ class InfoCollector(object):
         Fixture to collect test information
         """
         def add_info(info):
+            """
+            Adds information about test
+            """
             self._info[get_test_name(request)].append(info)
         return add_info
 

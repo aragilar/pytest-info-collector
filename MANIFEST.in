@@ -1,2 +1,10 @@
-include versioneer.py
-include pytest_info_collector/_version.py
+include versioneer.py pytest_info_collector/_version.py
+include README.md
+include LICENSE.txt
+recursive-include docs *
+recursive-exclude docs/_build *
+include doc-requirements.txt
+include test-requirements.txt
+recursive-include tests *.py
+include pylintrc
+include tox.ini
