@@ -1,5 +1,6 @@
 include versioneer.py pytest_info_collector/_version.py
 include README.md
+include pypi-intro.rst
 include LICENSE.txt
 recursive-include docs *
 recursive-exclude docs/_build *
