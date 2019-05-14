@@ -10,7 +10,7 @@ __version__ = get_versions()['version']
 del get_versions
 
 
-class InfoCollector(object):
+class InfoCollector:
     """
     Main driver of test information collection
     """
