@@ -1,0 +1,6 @@
+status = [
+  "aragilar.pytest-info-collector",
+  "codecov/patch",
+  "codecov/project",
+]
+
