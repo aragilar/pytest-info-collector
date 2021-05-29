@@ -9,3 +9,5 @@ include test-requirements.txt
 recursive-include tests *.py
 include pylintrc
 include tox.ini
+exclude bors.toml azure-pipelines.yml
+recursive-exclude ci *
